@@ -1,6 +1,6 @@
 import { io } from 'socket.io-client';
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3000'; 
+const BACKEND_URL = process.env.NODE_ENV === "production" ? process.env.NEXT_PUBLIC_VERCEL_URL : 'http://localhost:3000'; 
 const socket = io(BACKEND_URL);
 
 socket.on('connect', () => {
