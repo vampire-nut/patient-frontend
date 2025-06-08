@@ -4,8 +4,8 @@ const next = require('next');
 const { Server } = require('socket.io');
 
 const dev = process.env.NODE_ENV !== 'production';
-const hostname = process.env.WEBSOCKET_URL || 'localhost';
-const port = process.env.WEBSOCKET_PORT || 3000;
+const hostname = process.env.NEXT_PUBLIC_WEBSOCKET_URL || 'localhost';
+const port = process.env.NEXT_PUBLIC_WEBSOCKET_PORT || 9254;
 
 const app = next({ dev, hostname, port });
 const handler = app.getRequestHandler();
